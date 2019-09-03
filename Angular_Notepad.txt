@@ -1,0 +1,6 @@
+ng(angular) is a subset of npm(node package manager)
+npm install to install all the packages like @angular/cli, @angular/devkit,etc,
+ng add @angular/material to install angular material
+Due to this angular,package,package-lock.json,index,main,style,app.module are effected and in app.module BrowserAnimationModule is added
+ng serve --port or ng serve --o
+ng g m material (angular generate module)

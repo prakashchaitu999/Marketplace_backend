@@ -1,0 +1,25 @@
+image: mcr.microsoft.com/dotnet/core/sdk:2.2-alpine3.9
+stages:
+ - build
+ - test
+ - publish
+build-stages:
+ stage: build
+ script:
+   - dotnet restore
+   - dotnet build
+   - dotnet publish
+ artifacts:
+   paths:
+     - marketplace-microservice-backend/bin/Debug/netcoreapp2.2/publish
+ tags:
+   - immersive-cgi-w7-dotnet
+test-stages:
+ stage: test
+ script:
+   - dotnet test UnitTest/UnitTest.csproj
+ artifacts:
+   paths:
+     - marketplace-microservice-backend/bin/Debug/netcoreapp2.2/publish
+ tags:
+   - immersive-cgi-w7-dotnet
